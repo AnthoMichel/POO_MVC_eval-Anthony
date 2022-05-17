@@ -1,16 +1,6 @@
-<?php 
-require "Car.php";
+<?php ob_start() ?>
 
-
-require_once "CarManager.php";
-
-$carManager = new CarManager;
-$carManager->loadCars();
-$cars= $carManager->getCars();
-
-ob_start() ?>
-
-<p>Accueil - Liste de nos Véhicules</p>
+<p>- Accueil - Liste de nos Véhicules</p>
 
 
 <table class="table table-hover">

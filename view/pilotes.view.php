@@ -1,13 +1,4 @@
-<?php ob_start(); 
-require_once "Pilote.php";
-
-
-require_once "PiloteManager.php";
-
-$piloteManager = new PiloteManager;
-$piloteManager->loadPilotes();
-$pilotes= $piloteManager->getPilotes();
-?>
+<?php ob_start(); ?>
 
 <p>- Accueil - Liste de nos Pilotes</p>
 

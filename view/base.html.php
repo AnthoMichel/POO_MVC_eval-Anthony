@@ -19,18 +19,18 @@
     <div class="collapse navbar-collapse" id="navbarColor01">
       <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link active" href="index.php">Accueil
+          <a class="nav-link active" href="accueil">Accueil
             <span class="visually-hidden">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="cars.php">Voiture</a>
+          <a class="nav-link" href="cars">Voiture</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="pilotes.php">Pilote</a>
+          <a class="nav-link" href="pilotes">Pilote</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="relations.php">Relation</a>
+          <a class="nav-link" href="relations">Relation</a>
         </li>
     </div>
         </li>
