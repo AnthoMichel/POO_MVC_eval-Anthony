@@ -13,6 +13,10 @@ class CarController {
         $cars = $this->carManager->getCars();
         require_once "view/cars.view.php";
     }
+
+    public function newCarForm(){
+        require_once "view/new.car.view.php";
+    }
 }
 
 

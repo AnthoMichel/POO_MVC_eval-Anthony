@@ -19,12 +19,22 @@ if (empty($_GET['page'])){
             if (empty($url[1])){
                 $carController->displayCars();
             } elseif ($url[1]==="add"){
-                echo "Ajouter une voiture";
+                $carController->newCarForm();
+            } elseif ($url[1]==="edit"){
+                echo "Modifier une voiture";
+            } elseif ($url[1]==="delete"){
+                echo "Supprimer une voiture";
             }
         break;
         case "pilotes" : 
             if (empty($url[1])){
                 $piloteController->displayPilotes();
+            }elseif ($url[1]==="add"){
+                echo "Ajouter un pilote";
+            } elseif ($url[1]==="edit"){
+                echo "Modifier un pilote";
+            } elseif ($url[1]==="delete"){
+                echo "Supprimer un pilote";
             }
         break;
         case "relation" : require_once "view/relations.view.php";

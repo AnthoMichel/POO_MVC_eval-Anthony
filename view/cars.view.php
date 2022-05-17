@@ -22,12 +22,16 @@
       <td><?= $car->getModele() ?></td>
       <td><?= $car->getCouleur() ?></td>
       <td><?= $car->getImmatriculation() ?></td>
-      <td><a href=""><i class="fas fa-edit"></i></a></td>
-      <td><a href=""><i class="fas fa-trash"></i></a></td>
+      <td><a href="<?= URL ?>cars/edit"><i class="fas fa-edit"></i></a></td>
+      <td><a href="<?= URL ?>cars/delete"><i class="fas fa-trash"></i></a></td>
     </tr>
     <?php endforeach ?>
   </tbody>
 </table>
+
+  <a class="btn btn-success d-block w-25 m-auto" href="<?= URL ?>cars/add">Ajouter une voiture</a>
+
+
 
 <?php 
 $content = ob_get_clean();
