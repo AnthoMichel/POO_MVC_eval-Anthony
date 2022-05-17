@@ -1,15 +1,31 @@
 <?php 
+define("URL" , str_replace("index.php","",(isset($_SERVER['HTTPS']) ? "https" : "http") . 
+"://".$_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'] ));
 
+require_once "controller/CarController.php";
+require_once "controller/PiloteController.php";
+
+$carController = new CarController;
+$piloteController = new PiloteController;
 
 if (empty($_GET['page'])){
     require_once "view/home.view.php";
 }else {
-    switch($_GET['page']){
+    $url = explode("/", filter_var($_GET['page'],FILTER_SANITIZE_URL));
+    switch($url[0]){
         case "accueil" : require_once "view/home.view.php";
         break;
-        case "cars" : require_once "view/cars.view.php";
+        case "cars" : 
+            if (empty($url[1])){
+                $carController->displayCars();
+            } elseif ($url[1]==="add"){
+                echo "Ajouter une voiture";
+            }
         break;
-        case "pilotes" : require_once "view/pilotes.view.php";
+        case "pilotes" : 
+            if (empty($url[1])){
+                $piloteController->displayPilotes();
+            }
         break;
         case "relation" : require_once "view/relations.view.php";
         break;
