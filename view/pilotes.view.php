@@ -24,6 +24,8 @@
     <?php endforeach ?>
   </tbody>
 </table>
+<a class="btn btn-success d-block w-25 m-auto" href="<?= URL ?>pilotes/add">Ajouter un pilote</a>
+
 
 
 

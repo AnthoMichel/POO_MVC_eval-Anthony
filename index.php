@@ -20,6 +20,8 @@ if (empty($_GET['page'])){
                 $carController->displayCars();
             } elseif ($url[1]==="add"){
                 $carController->newCarForm();
+            } elseif ($url[1]==="cvalid"){
+                $carController->newCarValidation();
             } elseif ($url[1]==="edit"){
                 echo "Modifier une voiture";
             } elseif ($url[1]==="delete"){
@@ -30,7 +32,9 @@ if (empty($_GET['page'])){
             if (empty($url[1])){
                 $piloteController->displayPilotes();
             }elseif ($url[1]==="add"){
-                echo "Ajouter un pilote";
+                $piloteController->newPiloteForm();
+            }elseif ($url[1]==="pvalid"){
+                $piloteController->newPiloteValidation();
             } elseif ($url[1]==="edit"){
                 echo "Modifier un pilote";
             } elseif ($url[1]==="delete"){

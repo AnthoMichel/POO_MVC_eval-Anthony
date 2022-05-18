@@ -6,7 +6,7 @@
         <input type="text" class="form-control" name="marque" id="marque">
     </div>
     <div class="form-group">
-        <label for="model">Modele de la voiture</label>
+        <label for="modele">Modele de la voiture</label>
         <input type="text" class="form-control" name="modele" id="modele">
     </div>
     <div class="form-group">

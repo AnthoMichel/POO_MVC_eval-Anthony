@@ -17,6 +17,11 @@ class CarController {
     public function newCarForm(){
         require_once "view/new.car.view.php";
     }
+
+    public function newCarValidation(){
+        $this->carManager->newCarDB($_POST["marque"],$_POST["modele"], $_POST["couleur"], $_POST["immatriculation"]);
+        header('Location:'.URL."cars");
+    }
 }
 
 
