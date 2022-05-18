@@ -25,6 +25,7 @@ if (empty($_GET['page'])){
             } elseif ($url[1]==="edit"){
                 $carController->editCarForm($url[2]);
             } elseif ($url[1]==="editvalid"){
+                // var_dump($_POST);
                 $carController->editCarValidation();
             }elseif ($url[1]==="delete"){
                 $carController->deleteCar($url[2]);
