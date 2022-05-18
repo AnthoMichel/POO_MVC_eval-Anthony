@@ -14,8 +14,8 @@
         <input type="text" class="form-control" name="couleur" id="couleur">
     </div>
     <div class="form-group">
-        <label for="imatriculation">Immatriculation de la voiture</label>
-        <input type="text" class="form-control" name="imatriculation" id="imatriculation">
+        <label for="immatriculation">Immatriculation de la voiture</label>
+        <input type="text" class="form-control" name="immatriculation" id="immatriculation">
     </div>
     <button type="submit" class="btn btn-primary">Ajouter</button>
 
