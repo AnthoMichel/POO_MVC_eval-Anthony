@@ -26,6 +26,8 @@ if (empty($_GET['page'])){
                 $carController->editCarForm($url[2]);
             } elseif ($url[1]==="editvalid"){
                 $carController->editCarValidation();
+            }elseif ($url[1]==="delete"){
+                $carController->deleteCar($url[2]);
             }
         break;
         case "pilotes" : 
@@ -40,6 +42,8 @@ if (empty($_GET['page'])){
                 echo "Supprimer un pilote";
             } elseif ($url[1]==="editvalid"){
                 $piloteController->editPiloteValidation();
+            } elseif ($url[1]==="delete"){
+                $piloteController->deletePilote($url[2]);
             }
         break;
         case "relation" : require_once "view/relations.view.php";

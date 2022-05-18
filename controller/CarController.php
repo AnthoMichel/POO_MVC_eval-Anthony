@@ -32,6 +32,13 @@ class CarController {
         $this->carManager->editCarDB($_POST['id_vehicule'], $_POST['marque'], $_POST['modele'], $_POST['couleur'], $_POST['immatriculation']);
         header('Location:'.URL."cars");
     }
+
+    public function deleteCar($id){
+        $this->carManager->deleteCarBD($id);
+        header("Location: ".URL. "cars");
+    }
+
+
 }
 
 

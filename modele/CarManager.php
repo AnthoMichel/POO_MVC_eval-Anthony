@@ -60,19 +60,32 @@ class CarManager extends Manager
 
     public function editCarDB($id, $marque, $modele, $couleur, $immatriculation){
         $req = "UPDATE vehicule SET marque = :marque, modele = :modele, couleur = :couleur, immatriculation = :immatriculation WHERE id = :id_vehicule";
-        $stmt = $this->getBdd()->prepare($req);
-        $stmt->bindValue(":marque", $marque, PDO::PARAM_STR);
-        $stmt->bindValue(":modele", $modele, PDO::PARAM_STR);
-        $stmt->bindValue(":couleur", $couleur, PDO::PARAM_STR);
-        $stmt->bindValue(":immatriculation", $immatriculation, PDO::PARAM_STR);
-        $result = $stmt->execute();
-        $stmt->closeCursor();
+        $statement = $this->getBdd()->prepare($req);
+        $statement->bindValue(":marque",$marque, PDO::PARAM_INT);
+        $statement->bindValue(":modele", $modele, PDO::PARAM_STR);
+        $statement->bindValue(":couleur", $couleur, PDO::PARAM_STR);
+        $statement->bindValue(":immatriculation", $immatriculation, PDO::PARAM_STR);
+        $result = $statement->execute();
+        $statement->closeCursor();
         
         if($result){
             $this->getCarById($id)->setMarque($marque);
             $this->getCarById($id)->setModele($modele);
             $this->getCarById($id)->setCouleur($couleur);
             $this->getCarById($id)->setImmatriculation($immatriculation);
+        }
+    }
+
+    public function deleteCarBD($id){
+        $req = "DELETE FROM cars WHERE id = :id_vehicule";
+        $stmt = $this->getBdd()->prepare($req);
+        $stmt ->bindValue(":id_vehicule", $id, PDO::PARAM_INT);
+        $result = $stmt->execute();
+        $stmt->closeCursor();
+
+        if($result ){
+            $car = $this->getCarById($id);
+            unset($car);
         }
     }
 }

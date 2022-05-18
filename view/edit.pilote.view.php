@@ -9,7 +9,7 @@
         <label for="prenom">Prénom du pilote</label>
         <input type="text" class="form-control" value="<?= $pilote->getPrenom() ?>" name="prenom" id="prenom">
     </div>
-    <input type="hidden" name="id-pilote" value="<?= $pilote->getId_pilote()?>">
+    <input type="hidden" name="id_pilote" value="<?= $pilote->getId_pilote()?>">
     <button type="submit" class="btn btn-primary">Ajouter</button>
 
 </form>

@@ -33,6 +33,11 @@
         header('Location:'. URL. "pilotes");
     }
 
+    public function deletePilote($id){
+        $this->piloteManage->deletePiloteBD($id);
+        header("Location: ".URL. "pilotes");
+    }
+
     
 }
 

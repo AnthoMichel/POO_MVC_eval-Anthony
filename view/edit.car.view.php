@@ -17,7 +17,7 @@
         <label for="immatriculation">Immatriculation de la voiture</label>
         <input type="text" class="form-control" value="<?= $car->getImmatriculation() ?>" name="immatriculation" id="immatriculation">
     </div>
-    <input type="hidden" name="id_car" value="<?= $car->getId_vehicule()?>">
+    <input type="hidden" name="id_vehicule" value="<?= $car->getId_vehicule()?>">
     <button type="submit" class="btn btn-primary">Ajouter</button>
 
 </form>

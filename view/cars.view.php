@@ -23,7 +23,12 @@
       <td><?= $car->getCouleur() ?></td>
       <td><?= $car->getImmatriculation() ?></td>
       <td><a href="<?= URL ?>cars/edit/<?= $car->getId_vehicule() ?>"><i class="fas fa-edit"></i></a></td>
-      <td><a href="<?= URL ?>cars/delete"><i class="fas fa-trash"></i></a></td>
+      <td>
+      <form action="<?= URL ?>cars/delete/<?= $car->getId_vehicule() ?>" method="POST" 
+                            onSubmit=" return confirm('Êtes-vous certain de vouloir supprimer ce jeu ?')">
+                <button class="btn" type="submit"><i class="fas fa-trash"></i></button>
+            </form>      
+      </td>
     </tr>
     <?php endforeach ?>
   </tbody>
