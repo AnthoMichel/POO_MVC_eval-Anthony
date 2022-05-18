@@ -22,7 +22,7 @@
       <td><?= $car->getModele() ?></td>
       <td><?= $car->getCouleur() ?></td>
       <td><?= $car->getImmatriculation() ?></td>
-      <td><a href="<?= URL ?>cars/edit"><i class="fas fa-edit"></i></a></td>
+      <td><a href="<?= URL ?>cars/edit/<?= $car->getId_vehicule() ?>"><i class="fas fa-edit"></i></a></td>
       <td><a href="<?= URL ?>cars/delete"><i class="fas fa-trash"></i></a></td>
     </tr>
     <?php endforeach ?>

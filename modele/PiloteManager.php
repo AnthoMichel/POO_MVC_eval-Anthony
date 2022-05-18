@@ -45,4 +45,12 @@ class PiloteManager extends Manager
             $this->addPilote($pilote);
         }
     }
+
+    public function getPiloteById($id){
+        foreach ($this->pilotes as $pilote){
+            if($pilote->getId_pilote() == $id) {
+                return $pilote;
+            }
+        }
+    }
 }

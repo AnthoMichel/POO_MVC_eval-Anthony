@@ -18,7 +18,7 @@
       <th scope="row"><?= $pilote->getId_pilote() ?></th>
       <td><?= $pilote->getNom() ?></td>
       <td><?= $pilote->getPrenom() ?></td>
-      <td><a href=""><i class="fas fa-edit"></i></a></td>
+      <td><a href="<?= URL ?>pilotes/edit/<?= $pilote->getId_pilote() ?>"><i class="fas fa-edit"></i></a></td>
       <td><a href=""><i class="fas fa-trash"></i></a></td>
     </tr>
     <?php endforeach ?>
