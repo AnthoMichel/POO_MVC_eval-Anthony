@@ -3,7 +3,7 @@
 
     class PiloteController{
 
-    private $piloteController;
+    private $piloteManager;
 
     public function __construct(){
         $this->piloteManager = new PiloteManager;
