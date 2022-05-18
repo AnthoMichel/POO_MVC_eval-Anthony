@@ -59,7 +59,7 @@ class CarManager extends Manager
     }
 
     public function editCarDB($id, $marque, $modele, $couleur, $immatriculation){
-        $req = "UPDATE 'vehicule' SET 'marque' = :marque, 'modele' = :modele, 'couleur' = :couleur, 'immatriculation' = :immatriculation WHERE 'id' = :id_vehicule";
+        $req = "UPDATE 'vehicule' SET 'marque' = :marque, 'modele' = :modele, 'couleur' = :couleur, 'immatriculation' = :immatriculation WHERE 'id_vehicule' = :id";
         $stmt = $this->getBdd()->prepare($req);
         $stmt->bindValue(":marque", $marque, PDO::PARAM_STR);
         $stmt->bindValue(":modele", $modele, PDO::PARAM_STR);

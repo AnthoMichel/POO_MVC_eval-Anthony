@@ -33,7 +33,7 @@ class PiloteManager extends Manager
     public function newPiloteDB($nom, $prenom)
     {
         $req = "INSERT INTO conducteur (nom, prenom)
-        VALUES (:nom, :prenom)";
+        VALUES (:nom, :prenom) WHERE id_conducteur = :id" ;
         $stmt = $this->getBdd()->prepare($req);
         $stmt->bindValue(":nom", $nom, PDO::PARAM_STR);
         $stmt->bindValue(":prenom", $prenom, PDO::PARAM_STR);
@@ -56,7 +56,7 @@ class PiloteManager extends Manager
 
 
     public function editPiloteDB($id, $nom, $prenom){
-        $req = "UPDATE vehicule SET marque = :marque, modele, = :modele
+        $req = "UPDATE conducteur SET nom = :nom, prenom = :prenom
         WHERE id_conducteur = :id";
         $stmt = $this->getBdd()->prepare($req);
         $stmt->bindValue(":id", $id, PDO::PARAM_INT);
@@ -73,9 +73,9 @@ class PiloteManager extends Manager
     }
 
     public function deletePiloteBD($id){
-        $req = "DELETE FROM pilote WHERE id = :id_conducteur";
+        $req = "DELETE FROM pilote WHERE id = :id";
         $stmt = $this->getBdd()->prepare($req);
-        $stmt->bindValue(":id_conducteur",$id, PDO::PARAM_INT);
+        $stmt->bindValue(":id",$id, PDO::PARAM_INT);
         $result = $stmt->execute();
 
         if($result) {

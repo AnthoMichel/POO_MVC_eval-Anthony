@@ -2,6 +2,7 @@
     require_once "./modele/PiloteManager.php";
 
     class PiloteController{
+
     private $piloteController;
 
     public function __construct(){
@@ -29,7 +30,7 @@
     }
 
     public function editPiloteValidation(){
-        $this->piloteManager->editPiloteDB($_POST['id-pilote'],$_POST['nom'],$_POST['prenom']);
+        $this->piloteManager->editPiloteDB($_POST['id_conducteur'],$_POST['nom'],$_POST['prenom']);
         header('Location:'. URL. "pilotes");
     }
 

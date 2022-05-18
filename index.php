@@ -28,7 +28,7 @@ if (empty($_GET['page'])){
                 $carController->editCarValidation();
             }elseif ($url[1]==="delete"){
                 $carController->deleteCar($url[2]);
-            }
+            } 
         break;
         case "pilotes" : 
             if (empty($url[1])){
@@ -53,5 +53,3 @@ if (empty($_GET['page'])){
         
     }
 }
-
-?>
