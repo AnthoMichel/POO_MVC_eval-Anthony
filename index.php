@@ -39,12 +39,14 @@ if (empty($_GET['page'])){
                 $piloteController->newPiloteValidation();
             } elseif ($url[1]==="edit"){
                 $piloteController->editPiloteForm($url[2]);
-                echo "Supprimer un pilote";
-            } elseif ($url[1]==="editvalid"){
-                $piloteController->editPiloteValidation();
-            } elseif ($url[1]==="delete"){
-                $piloteController->deletePilote($url[2]);
+                
             }
+             elseif ($url[1]==="editvalid"){
+                
+                $piloteController->editPiloteValidation();}
+            // } elseif ($url[1]==="delete"){
+            //     $piloteController->deletePilote($url[2]);
+            // }
         break;
         case "relation" : require_once "view/relations.view.php";
         break;

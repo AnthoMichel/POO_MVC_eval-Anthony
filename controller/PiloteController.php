@@ -34,7 +34,7 @@
     }
 
     public function deletePilote($id){
-        $this->piloteManage->deletePiloteBD($id);
+        $this->piloteManager->deletePiloteBD($id);
         header("Location: ".URL. "pilotes");
     }
 

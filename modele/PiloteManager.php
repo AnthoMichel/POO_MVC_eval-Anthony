@@ -53,4 +53,34 @@ class PiloteManager extends Manager
             }
         }
     }
+
+
+    public function editPiloteDB($id, $nom, $prenom){
+        $req = "UPDATE vehicule SET marque = :marque, modele, = :modele
+        WHERE id_conducteur = :id";
+        $stmt = $this->getBdd()->prepare($req);
+        $stmt->bindValue(":id", $id, PDO::PARAM_INT);
+        $stmt->bindValue(":nom", $nom, PDO::PARAM_STR);
+        $stmt->bindValue(":prenom", $prenom, PDO::PARAM_STR);
+        $result = $stmt->execute();
+        $stmt->closeCursor();
+
+        if($result){
+            $this->getPiloteById($id)->setNom($nom);
+            $this->getPiloteById($id)->setPrenom($prenom);
+        }
+
+    }
+
+    public function deletePiloteBD($id){
+        $req = "DELETE FROM pilote WHERE id = :id_conducteur";
+        $stmt = $this->getBdd()->prepare($req);
+        $stmt->bindValue(":id_conducteur",$id, PDO::PARAM_INT);
+        $result = $stmt->execute();
+
+        if($result) {
+            $pilote = $this->getPiloteById($id);
+            unset($pilote);
+        }
+    }
 }
